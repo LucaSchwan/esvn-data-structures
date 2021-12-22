@@ -1,0 +1,15 @@
+{
+  "name": "esvn-data-structures",
+  "version": "1.0.0",
+  "description": "Implementation of standard data structures using Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "'"
+  },
+  "author": "ehrenschwan",
+  "license": "ISC"
+}
