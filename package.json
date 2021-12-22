@@ -1,5 +1,5 @@
 {
-    "name": "esvn-data-structures",
+    "name": "eswn-data-structures",
     "version": "1.0.0",
     "description": "Implementation of standard data structures using Typescript",
     "main": "index.js",
@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/LucaSchwan/esvn-data-structures.git"
+        "url": "git+https://github.com/LucaSchwan/eswn-data-structures.git"
     },
     "author": "ehrenschwan",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/LucaSchwan/esvn-data-structures/issues"
+        "url": "https://github.com/LucaSchwan/eswn-data-structures/issues"
     },
-    "homepage": "https://github.com/LucaSchwan/esvn-data-structures#readme",
+    "homepage": "https://github.com/LucaSchwan/eswn-data-structures#readme",
     "devDependencies": {
         "@types/chai": "^4.3.0",
         "@types/mocha": "^9.0.0",
