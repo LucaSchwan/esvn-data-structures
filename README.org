@@ -1,0 +1,16 @@
+#+TITLE: ehrenschwan data structures
+#+AUTHOR: ehrenschwan
+
+This an implementation of standard data structures in Typescript for educational purposes.
+
+* TODO Data Structures
+
+- Linked List
+- Stack
+- Queue
+- Binary Tree
+- Binary Search Tree
+- Heap
+- Hashing
+- Graph
+- Matrix
