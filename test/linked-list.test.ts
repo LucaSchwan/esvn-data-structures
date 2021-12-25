@@ -106,7 +106,7 @@ describe('LinkedList', () => {
       next: null,
     };
 
-    list.insertBeginning(list, node);
+    list.insertBeginning(node);
 
     expect(list.head).to.equal(node);
   });
@@ -130,7 +130,7 @@ describe('LinkedList', () => {
     list.newNode('test');
     if (list.head) expect(list.head.value).to.equal('test');
 
-    list.removeBeginning(list);
+    list.removeBeginning();
     expect(list.head).to.equal(null);
   });
 });

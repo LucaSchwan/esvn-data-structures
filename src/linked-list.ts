@@ -42,16 +42,16 @@ export class LinkedList<T> {
     node.next = newNode;
   }
 
-  insertBeginning(list: LinkedList<T>, node: ListNode<T>): void {
-    node.next = list.head;
-    list.head = node;
+  insertBeginning(node: ListNode<T>): void {
+    node.next = this.head;
+    this.head = node;
   }
 
   removeAfter(node: ListNode<T>): void {
     if (node.next) node.next = node.next.next;
   }
 
-  removeBeginning(list: LinkedList<T>): void {
-    if (list.head) list.head = list.head.next;
+  removeBeginning(): void {
+    if (this.head) this.head = this.head.next;
   }
 }
