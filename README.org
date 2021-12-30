@@ -3,14 +3,20 @@
 
 This an implementation of standard data structures in Typescript for educational purposes.
 
-* TODO Data Structures
+* Data Structures
 
-- Linked List
-- Stack
-- Queue
-- Binary Tree
-- Binary Search Tree
-- Heap
-- Hashing
-- Graph
-- Matrix
++ [X] Linked List
+  + addNode
+  + newNode
+  + insertAfter
+  + insertBeginning
+  + removeAfter
+  + removeBeginning  
++ [ ]Stack
++ [ ]Queue
++ [ ]Binary Tree
++ [ ]Binary Search Tree
++ [ ]Heap
++ [ ]Hashing
++ [ ]Graph
++ [ ]Matrix
