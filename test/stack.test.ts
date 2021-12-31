@@ -3,14 +3,14 @@ import { Stack } from '../src/structures/stack';
 
 describe('Stack', () => {
   it("should push a new Node with given element on the top of the Stack and increase it's size by 1.", () => {
-    let stack = new Stack<string>();
-    let size = stack.size;
+    let stack = new Stack<string>('test');
+    let size = stack.getSize();
     stack.push('test');
 
     let head = stack.getHead();
     expect(head).not.to.equal(null);
     if (head) expect(head.element).to.equal('test');
-    expect(stack.size - size).to.equal(1);
+    expect(stack.getSize() - size).to.equal(1);
   });
 
   it('should return an element when popped from the Stack.', () => {

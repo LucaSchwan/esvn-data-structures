@@ -2,7 +2,12 @@ import { Node } from '../models/singly-linked-list-structures';
 import { LinkedList } from './linked-list';
 
 export class Stack<T> extends LinkedList<T> {
-  size: number = 0;
+  protected size: number = 0;
+
+  constructor(element?: T) {
+    super(element);
+    this.size++;
+  }
 
   push(element: T): void {
     let frame: Node<T> = {
@@ -24,5 +29,9 @@ export class Stack<T> extends LinkedList<T> {
 
   peak(): T | null {
     return this.head ? this.head.element : null;
+  }
+
+  getSize(): number {
+    return this.size;
   }
 }
