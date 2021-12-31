@@ -1,16 +1,16 @@
-export interface StackNode<T> {
-  data: T | null;
-  next: StackNode<T> | null;
+export interface ListNode<T> {
+  value: T | null;
+  next: ListNode<T> | null;
 }
-export class Stack<T> {
-  head: StackNode<T> | null;
+export class LinkedList<T> {
+  head: ListNode<T> | null;
 
-  constructor(node?: StackNode<T>) {
+  constructor(node?: ListNode<T>) {
     this.head = node || null;
   }
 
-  addNode(node: StackNode<T>): StackNode<T> {
-    let p: StackNode<T>;
+  addNode(node: ListNode<T>): ListNode<T> {
+    let p: ListNode<T>;
     if (this.head == null) {
       this.head = node;
     } else {
@@ -21,10 +21,10 @@ export class Stack<T> {
     return this.head;
   }
 
-  newNode(value: T): StackNode<T> {
-    let p: StackNode<T>;
-    let temp: StackNode<T> = {
-      data: value,
+  newNode(value: T): ListNode<T> {
+    let p: ListNode<T>;
+    let temp: ListNode<T> = {
+      value: value,
       next: null,
     };
     if (this.head == null) {
@@ -37,17 +37,17 @@ export class Stack<T> {
     return this.head;
   }
 
-  insertAfter(node: StackNode<T>, newNode: StackNode<T>): void {
+  insertAfter(node: ListNode<T>, newNode: ListNode<T>): void {
     newNode.next = node.next;
     node.next = newNode;
   }
 
-  insertBeginning(node: StackNode<T>): void {
+  insertBeginning(node: ListNode<T>): void {
     node.next = this.head;
     this.head = node;
   }
 
-  removeAfter(node: StackNode<T>): void {
+  removeAfter(node: ListNode<T>): void {
     if (node.next) node.next = node.next.next;
   }
 

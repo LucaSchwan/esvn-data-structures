@@ -1,12 +1,17 @@
-interface StackNode<T> {
+export interface StackFrame<T> {
   data: T | null;
-  next: StackNode<T> | null;
+  next: StackFrame<T> | null;
 }
 
-class Stack<T> {
-  head: StackNode<T> | null;
+export class Stack<T> {
+  head: StackFrame<T> | null;
 
-  constructor(node?: StackNode<T>) {
-    this.head = node || null;
+  constructor(frame?: StackFrame<T>) {
+    this.head = frame || null;
+  }
+
+  push(frame: StackFrame<T>) {
+    frame.next = this.head;
+    this.head = frame;
   }
 }

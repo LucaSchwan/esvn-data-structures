@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Stack, StackNode } from '../src/linked-list';
+import { Stack, StackFrame } from '../src/stack';
 
 describe('Stack', () => {
   it('should be initialised with null as head when passed no arguments', () => {
@@ -7,13 +7,13 @@ describe('Stack', () => {
     expect(stack.head).to.be.null;
   });
 
-  it('should be able to be initialised with a node as head', () => {
-    let node: StackNode<string> = {
+  it('should be able to be initialised with a frame as head', () => {
+    let frame: StackFrame<string> = {
       data: 'test',
       next: null,
     };
-    let stack = new Stack<string>(node);
-    expect(stack.head).to.equal(node);
+    let stack = new Stack<string>(frame);
+    expect(stack.head).to.equal(frame);
   });
 
   it('should have the right type', () => {
@@ -34,5 +34,17 @@ describe('Stack', () => {
       next: null,
     });
     if (booleanStack.head) expect(booleanStack.head.data).to.be.a('boolean');
+  });
+
+  it('should push a new frame  on the top of the stack', () => {
+    let stack = new Stack<string>();
+
+    let frame: StackFrame<string> = {
+      data: 'test',
+      next: null,
+    };
+    stack.push(frame);
+
+    expect(stack.head).to.be.not.null;
   });
 });
