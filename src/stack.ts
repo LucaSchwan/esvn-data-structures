@@ -10,12 +10,7 @@ export class Stack<T> {
     this.head = frame || null;
   }
 
-  push(frame: StackFrame<T>) {
-    frame.next = this.head;
-    this.head = frame;
-  }
-
-  pushData(data: T) {
+  push(data: T) {
     let frame: StackFrame<T> = {
       data: data,
       next: this.head,

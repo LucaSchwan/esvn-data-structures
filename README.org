@@ -13,6 +13,8 @@ This an implementation of standard data structures in Typescript for educational
   + removeAfter
   + removeBeginning  
 + [ ]Stack
+  + push
+  + pop
 + [ ]Queue
 + [ ]Binary Tree
 + [ ]Binary Search Tree
