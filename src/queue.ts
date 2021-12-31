@@ -1,4 +1,11 @@
-import { Node } from '../models/doubly-linked-list-node';
+// TODO implement DoublyLinkedList and have Queue use it
+
+// temporary until DoublyLinkedList is implemented
+export interface Node<T> {
+  element: T | null;
+  next: Node<T> | null;
+  prev: Node<T> | null;
+}
 
 export class Queue<T> {
   firstNode: Node<T> | null;

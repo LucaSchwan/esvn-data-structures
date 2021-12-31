@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { Queue } from '../src/structures/queue';
-import { Node } from '../src/models/doubly-linked-list-node';
+import { Queue, Node } from '../src/queue';
 
 describe('Queue', () => {
   it('should be initilised with null as first and last Node', () => {

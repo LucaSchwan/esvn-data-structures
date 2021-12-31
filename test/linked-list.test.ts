@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { LinkedList } from '../src/linked-list';
-import { Node } from '../src/models/singly-linked-list-structures';
+import { LinkedList, Node } from '../src/linked-list';
 
 describe('LinkedList', () => {
   it('should be initialised with null as head when passed no arguments.', () => {
@@ -13,24 +12,6 @@ describe('LinkedList', () => {
     let head = list.getHead();
     expect(head).to.not.equal(null);
     if (head) expect(head.element).to.equal('test');
-  });
-
-  it('should have the right type.', () => {
-    let stringList = new LinkedList<string>('test');
-    let head: Node<string> | Node<number> | Node<boolean> | null =
-      stringList.getHead();
-    expect(head).to.not.equal(null);
-    if (head) expect(head.element).to.be.a('string');
-
-    let numberList = new LinkedList<number>(5);
-    head = numberList.getHead();
-    expect(head).to.not.equal(null);
-    if (head) expect(head.element).to.be.a('number');
-
-    let booleanList = new LinkedList<boolean>(true);
-    head = booleanList.getHead();
-    expect(head).to.not.equal(null);
-    if (head) expect(head.element).to.be.a('boolean');
   });
 
   it('should add a node to the getHead() if the LinkedList is empty.', () => {
