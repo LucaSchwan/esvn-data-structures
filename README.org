@@ -16,7 +16,9 @@ This an implementation of standard data structures in Typescript for educational
   + push
   + pop
   + peak
-+ [ ]Queue
++ [X] Queue
+  + enqueue
+  + dequeue
 + [ ]Binary Tree
 + [ ]Binary Search Tree
 + [ ]Heap
