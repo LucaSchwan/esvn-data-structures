@@ -5,13 +5,14 @@ This an implementation of standard data structures in Typescript for educational
 
 * Data Structures
 
-+ [X] Linked List
++ [X] Singly Linked List
   + addNode
   + newNode
   + insertAfter
   + insertBeginning
   + removeAfter
   + removeBeginning  
++ [ ] Doubly Linked List
 + [X] Stack
   + push
   + pop

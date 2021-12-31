@@ -1,7 +1,7 @@
 import { Node } from '../models/singly-linked-list-structures';
 
 export class LinkedList<T> {
-  head: Node<T> | null;
+  protected head: Node<T> | null;
 
   constructor(element?: T) {
     this.head = element
@@ -56,5 +56,9 @@ export class LinkedList<T> {
 
   removeBeginning(): void {
     if (this.head) this.head = this.head.next;
+  }
+
+  getHead(): Node<T> | null {
+    return this.head;
   }
 }

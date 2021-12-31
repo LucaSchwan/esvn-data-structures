@@ -1,7 +1,7 @@
 import { Node } from '../models/singly-linked-list-structures';
+import { LinkedList } from './linked-list';
 
-export class Stack<T> {
-  head: Node<T> | null = null;
+export class Stack<T> extends LinkedList<T> {
   size: number = 0;
 
   push(element: T): void {
