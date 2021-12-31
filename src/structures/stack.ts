@@ -1,6 +1,8 @@
 import { Node } from '../models/singly-linked-list-structures';
 import { LinkedList } from './linked-list';
 
+// TODO implement Stack not as extend from LinkedList but have its items be a LinkedList then i don't have to deal with the functions from the Linked List
+
 export class Stack<T> extends LinkedList<T> {
   protected size: number = 0;
 
