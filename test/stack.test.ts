@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Stack } from '../src/structures/stack';
+import { Stack } from '../src/stack';
 
 describe('Stack', () => {
   it("should push a new Node with given element on the top of the Stack and increase it's size by 1.", () => {

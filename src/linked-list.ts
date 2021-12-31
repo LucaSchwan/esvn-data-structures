@@ -1,4 +1,7 @@
-import { Node } from '../models/singly-linked-list-structures';
+export interface Node<T> {
+  element: T | null;
+  next: Node<T> | null;
+}
 
 export class LinkedList<T> {
   protected head: Node<T> | null;

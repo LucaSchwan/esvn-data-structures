@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { LinkedList } from '../src/structures/linked-list';
+import { LinkedList } from '../src/linked-list';
 import { Node } from '../src/models/singly-linked-list-structures';
 
 describe('LinkedList', () => {
