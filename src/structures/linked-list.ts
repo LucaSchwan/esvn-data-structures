@@ -1,16 +1,19 @@
-export interface ListNode<T> {
-  value: T | null;
-  next: ListNode<T> | null;
-}
-export class LinkedList<T> {
-  head: ListNode<T> | null;
+import { Node } from '../models/singly-linked-list-structures';
 
-  constructor(node?: ListNode<T>) {
-    this.head = node || null;
+export class LinkedList<T> {
+  head: Node<T> | null;
+
+  constructor(element?: T) {
+    this.head = element
+      ? {
+          element: element,
+          next: null,
+        }
+      : null;
   }
 
-  addNode(node: ListNode<T>): ListNode<T> {
-    let p: ListNode<T>;
+  addNode(node: Node<T>): Node<T> {
+    let p: Node<T>;
     if (this.head == null) {
       this.head = node;
     } else {
@@ -21,10 +24,10 @@ export class LinkedList<T> {
     return this.head;
   }
 
-  newNode(value: T): ListNode<T> {
-    let p: ListNode<T>;
-    let temp: ListNode<T> = {
-      value: value,
+  newNode(element: T): Node<T> {
+    let p: Node<T>;
+    let temp: Node<T> = {
+      element: element,
       next: null,
     };
     if (this.head == null) {
@@ -37,17 +40,17 @@ export class LinkedList<T> {
     return this.head;
   }
 
-  insertAfter(node: ListNode<T>, newNode: ListNode<T>): void {
+  insertAfter(node: Node<T>, newNode: Node<T>): void {
     newNode.next = node.next;
     node.next = newNode;
   }
 
-  insertBeginning(node: ListNode<T>): void {
+  insertBeginning(node: Node<T>): void {
     node.next = this.head;
     this.head = node;
   }
 
-  removeAfter(node: ListNode<T>): void {
+  removeAfter(node: Node<T>): void {
     if (node.next) node.next = node.next.next;
   }
 
