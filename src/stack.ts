@@ -4,17 +4,28 @@ export interface StackFrame<T> {
 }
 
 export class Stack<T> {
-  head: StackFrame<T> | null;
+  head: StackFrame<T> | null = null;
+  size: number = 0;
 
-  constructor(frame?: StackFrame<T>) {
-    this.head = frame || null;
-  }
-
-  push(data: T) {
+  push(data: T): void {
     let frame: StackFrame<T> = {
       data: data,
       next: this.head,
     };
     this.head = frame;
+    this.size++;
+  }
+
+  pop(): T | null {
+    if (this.head == null) {
+      throw new Error('StackUnderflow');
+    }
+    let data = this.head.data;
+    this.head = this.head.next;
+    return data;
+  }
+
+  peak(): T | null {
+    return this.head ? this.head.data : null;
   }
 }
