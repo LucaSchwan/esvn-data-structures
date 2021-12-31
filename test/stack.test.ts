@@ -38,13 +38,19 @@ describe('Stack', () => {
 
   it('should push a new frame  on the top of the stack', () => {
     let stack = new Stack<string>();
-
     let frame: StackFrame<string> = {
       data: 'test',
       next: null,
     };
     stack.push(frame);
 
-    expect(stack.head).to.be.not.null;
+    if (stack.head) expect(stack.head.data).to.equal('test');
+  });
+
+  it('should push a new frame with given data on the top of the stack', () => {
+    let stack = new Stack<string>();
+    stack.pushData('test');
+
+    if (stack.head) expect(stack.head.data).to.equal('test');
   });
 });

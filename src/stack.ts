@@ -14,4 +14,12 @@ export class Stack<T> {
     frame.next = this.head;
     this.head = frame;
   }
+
+  pushData(data: T) {
+    let frame: StackFrame<T> = {
+      data: data,
+      next: this.head,
+    };
+    this.head = frame;
+  }
 }
