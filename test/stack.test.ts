@@ -84,4 +84,15 @@ describe('Stack', () => {
     expect(stack.head).to.not.equal(null);
     if (stack.head) expect(stack.head.data).to.equal('test');
   });
+
+  it('should return the frame of the top of the stack without removing it when using peekFrame', () => {
+    let stack = new Stack<string>();
+    stack.push('test');
+
+    let frame = stack.peakFrame();
+    expect(frame).to.not.equal(null);
+    if (frame) expect(frame.data).to.equal('test');
+    expect(stack.head).to.not.equal(null);
+    if (stack.head) expect(stack.head.data).to.equal('test');
+  });
 });

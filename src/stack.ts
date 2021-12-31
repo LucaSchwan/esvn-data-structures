@@ -40,4 +40,8 @@ export class Stack<T> {
   peak(): T | null {
     return this.head ? this.head.data : null;
   }
+
+  peakFrame(): StackFrame<T> | null {
+    return this.head;
+  }
 }
