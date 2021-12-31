@@ -21,18 +21,21 @@ describe('LinkedList', () => {
       value: 'test',
       next: null,
     });
+    expect(stringList.head).to.not.equal(null);
     if (stringList.head) expect(stringList.head.value).to.be.a('string');
 
     let numberList = new LinkedList<number>({
       value: 5,
       next: null,
     });
+    expect(numberList.head).to.not.equal(null);
     if (numberList.head) expect(numberList.head.value).to.be.a('number');
 
     let booleanList = new LinkedList<boolean>({
       value: true,
       next: null,
     });
+    expect(booleanList.head).to.not.equal(null);
     if (booleanList.head) expect(booleanList.head.value).to.be.a('boolean');
   });
 
@@ -44,6 +47,7 @@ describe('LinkedList', () => {
     let list = new LinkedList<string>();
 
     list.addNode(node);
+    expect(list.head).to.not.equal(null);
     if (list.head) expect(list.head).to.equal(node);
   });
 
@@ -60,6 +64,7 @@ describe('LinkedList', () => {
     };
 
     list.addNode(newNode);
+    expect(list.head).to.not.equal(null);
     if (list.head) expect(list.head.next).to.equal(newNode);
   });
 
@@ -72,8 +77,11 @@ describe('LinkedList', () => {
 
     // add a new node after the head
     list.newNode('test2');
-    if (list.head)
+    expect(list.head).to.not.equal(null);
+    if (list.head) {
+      expect(list.head.next).to.not.equal(null);
       if (list.head.next) expect(list.head.next.value).to.equal('test2');
+    }
   });
 
   it('should insert a node after a given node', () => {
@@ -92,6 +100,7 @@ describe('LinkedList', () => {
     list.insertAfter(node, newNode);
 
     expect(node.next).to.equal(newNode);
+    expect(list.head).to.not.equal(null);
     if (list.head) expect(list.head.next).to.equal(newNode);
   });
 
@@ -128,6 +137,7 @@ describe('LinkedList', () => {
   it('should remove the first node of a list', () => {
     let list = new LinkedList<string>();
     list.newNode('test');
+    expect(list.head).to.not.equal(null);
     if (list.head) expect(list.head.value).to.equal('test');
 
     list.removeBeginning();

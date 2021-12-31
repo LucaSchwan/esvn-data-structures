@@ -16,13 +16,25 @@ export class Stack<T> {
     this.size++;
   }
 
-  pop(): T | null {
+  pushFrame(frame: StackFrame<T>): void {
+    this.head = frame;
+    this.size++;
+  }
+
+  pop(): T | null | never {
     if (this.head == null) {
       throw new Error('StackUnderflow');
     }
     let data = this.head.data;
     this.head = this.head.next;
     return data;
+  }
+
+  popFrame(): StackFrame<T> | null | never {
+    if (this.head == null) {
+      throw new Error('StackUnderflow');
+    }
+    return this.head;
   }
 
   peak(): T | null {
