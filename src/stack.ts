@@ -26,13 +26,13 @@ export class Stack<T> {
     if (this.frames.getHead() == null) {
       throw new Error('StackUnderflow');
     }
-    let head = this.frames.getHead();
+    let head = this.getHead();
     this.size--;
     return head ? head.element : null;
   }
 
   peak(): T | null {
-    let head = this.frames.getHead();
+    let head = this.getHead();
     return head ? head.element : null;
   }
 
