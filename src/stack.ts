@@ -27,10 +27,8 @@ export class Stack<T> {
       throw new Error('StackUnderflow');
     }
     let head = this.frames.getHead();
-    let element: T | null = null;
-    if (head) element = head.element;
     this.size--;
-    return element;
+    return head ? head.element : null;
   }
 
   peak(): T | null {
