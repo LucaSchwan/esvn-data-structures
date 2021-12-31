@@ -9,6 +9,26 @@ export class Stack<T> extends LinkedList<T> {
     this.size++;
   }
 
+  insertAfter(node: Node<T>, newNode: Node<T>) {
+    super.insertAfter(node, newNode);
+    this.size++;
+  }
+
+  insertBeginning(node: Node<T>) {
+    super.insertBeginning(node);
+    this.size++;
+  }
+
+  removeBeginning(): void {
+    super.removeBeginning();
+    this.size--;
+  }
+
+  removeAfter(node: Node<T>) {
+    super.removeAfter(node);
+    this.size--;
+  }
+
   push(element: T): void {
     let frame: Node<T> = {
       element: element,
@@ -24,6 +44,7 @@ export class Stack<T> extends LinkedList<T> {
     }
     let element = this.head.element;
     this.head = this.head.next;
+    this.size--;
     return element;
   }
 

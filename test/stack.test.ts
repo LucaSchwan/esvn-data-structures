@@ -13,12 +13,14 @@ describe('Stack', () => {
     expect(stack.getSize() - size).to.equal(1);
   });
 
-  it('should return an element when popped from the Stack.', () => {
+  it("should return an element when popped from the Stack and decrease it's size by 1.", () => {
     let stack = new Stack<string>();
     stack.push('test');
+    let size = stack.getSize();
     let element = stack.pop();
 
     expect(element).to.equal('test');
+    expect(size - stack.getSize()).to.equal(1);
   });
 
   it('should throw a StackUnderflow Error if a pop is tried on an empty Stack', () => {
