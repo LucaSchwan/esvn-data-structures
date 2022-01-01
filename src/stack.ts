@@ -1,24 +1,16 @@
-import { LinkedList, Node } from './linked-list';
+import { SinglyLinkedList, SinglyLinkedNode } from './singly-linked-list';
 
 export class Stack<T> {
-  protected frames = new LinkedList<T>();
+  protected frames = new SinglyLinkedList<T>();
   protected size: number = 0;
 
   constructor(element?: T) {
-    element
-      ? this.frames.insertBeginning({
-          element: element,
-          next: null,
-        })
-      : null;
+    element ? this.frames.insertBeginning(element) : null;
     this.size++;
   }
 
   push(element: T): void {
-    this.frames.insertBeginning({
-      element: element,
-      next: null,
-    });
+    this.frames.insertBeginning(element);
     this.size++;
   }
 
@@ -40,7 +32,7 @@ export class Stack<T> {
     return this.size;
   }
 
-  getHead(): Node<T> | null {
+  getHead(): SinglyLinkedNode<T> | null {
     return this.frames.getHead();
   }
 }

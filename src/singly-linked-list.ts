@@ -1,10 +1,10 @@
-export interface Node<T> {
+export interface SinglyLinkedNode<T> {
   element: T | null;
-  next: Node<T> | null;
+  next: SinglyLinkedNode<T> | null;
 }
 
-export class LinkedList<T> {
-  protected head: Node<T> | null;
+export class SinglyLinkedList<T> {
+  protected head: SinglyLinkedNode<T> | null;
 
   constructor(element?: T) {
     this.head = element
@@ -15,8 +15,12 @@ export class LinkedList<T> {
       : null;
   }
 
-  addNode(node: Node<T>): Node<T> {
-    let p: Node<T>;
+  getHead(): SinglyLinkedNode<T> | null {
+    return this.head;
+  }
+
+  addNode(node: SinglyLinkedNode<T>): SinglyLinkedNode<T> {
+    let p: SinglyLinkedNode<T>;
     if (this.head == null) {
       this.head = node;
     } else {
@@ -27,9 +31,9 @@ export class LinkedList<T> {
     return this.head;
   }
 
-  newNode(element: T): Node<T> {
-    let p: Node<T>;
-    let temp: Node<T> = {
+  newNode(element: T): SinglyLinkedNode<T> {
+    let p: SinglyLinkedNode<T>;
+    let temp: SinglyLinkedNode<T> = {
       element: element,
       next: null,
     };
@@ -43,25 +47,29 @@ export class LinkedList<T> {
     return this.head;
   }
 
-  insertAfter(node: Node<T>, newNode: Node<T>): void {
+  insertAfter(node: SinglyLinkedNode<T>, element: T): void {
+    let newNode: SinglyLinkedNode<T> = {
+      element: element,
+      next: null,
+    };
     newNode.next = node.next;
     node.next = newNode;
   }
 
-  insertBeginning(node: Node<T>): void {
+  insertBeginning(element: T): void {
+    let node: SinglyLinkedNode<T> = {
+      element: element,
+      next: null,
+    };
     node.next = this.head;
     this.head = node;
   }
 
-  removeAfter(node: Node<T>): void {
+  removeAfter(node: SinglyLinkedNode<T>): void {
     if (node.next) node.next = node.next.next;
   }
 
   removeBeginning(): void {
     if (this.head) this.head = this.head.next;
-  }
-
-  getHead(): Node<T> | null {
-    return this.head;
   }
 }
