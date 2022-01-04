@@ -46,12 +46,12 @@ describe('SinglyLinkedList', () => {
     let list = new SinglyLinkedList<string>();
 
     // add to the head
-    list.newNode('test');
+    list.add('test');
     let head = list.getHead();
     if (head) expect(head.element).to.equal('test');
 
     // add a new node after the head
-    list.newNode('test2');
+    list.add('test2');
     head = list.getHead();
     expect(head).to.not.equal(null);
     if (head) {
@@ -98,7 +98,7 @@ describe('SinglyLinkedList', () => {
     let list = new SinglyLinkedList<string>();
     list.addNode(node);
 
-    list.newNode('test');
+    list.add('test');
     expect(node.next).to.not.equal(null);
 
     list.removeAfter(node);
@@ -107,7 +107,7 @@ describe('SinglyLinkedList', () => {
 
   it('should remove the first Node of a LinkedList.', () => {
     let list = new SinglyLinkedList<string>();
-    list.newNode('test');
+    list.add('test');
     let head = list.getHead();
     expect(head).to.not.equal(null);
     if (head) expect(head.element).to.equal('test');

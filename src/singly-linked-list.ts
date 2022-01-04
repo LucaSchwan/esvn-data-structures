@@ -31,7 +31,7 @@ export class SinglyLinkedList<T> {
     return this.head;
   }
 
-  newNode(element: T): SinglyLinkedNode<T> {
+  add(element: T): SinglyLinkedNode<T> {
     let p: SinglyLinkedNode<T>;
     let temp: SinglyLinkedNode<T> = {
       element: element,
