@@ -28,21 +28,21 @@ This an implementation of standard data structures in Typescript for educational
 ** [2/26] Doubly Linked List
 + [X] getFirst
 + [X] getLast
-+ [ ] getSize
-+ [ ] addNode
-+ [ ] add
++ [ ] getSize*
++ [ ] addNode*
++ [ ] add*
 + [ ] nodeAtIndex
 + [ ] atIndex
 + [ ] indexOf
-+ [ ] insertBefore
-+ [ ] insertAfter
-+ [ ] insertBeginning
-+ [ ] insertEnd
++ [ ] insertBefore*
++ [ ] insertAfter*
++ [ ] insertBeginning*
++ [ ] insertEnd*
 + [ ] insert
-+ [ ] removeBefore
-+ [ ] removeAfter
-+ [ ] removeBeginning 
-+ [ ] removeEnd 
++ [ ] removeBefore*
++ [ ] removeAfter*
++ [ ] removeBeginning *
++ [ ] removeEnd *
 + [ ] removeAtIndex
 + [ ] contains
 + [ ] reverse
