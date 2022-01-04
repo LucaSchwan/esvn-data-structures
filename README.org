@@ -9,6 +9,7 @@ This an implementation of standard data structures in Typescript for educational
 + [X] getHead
 + [X] getSize
 + [X] addNode
++ [X] add
 + [ ] nodeAtIndex
 + [ ] atIndex
 + [ ] indexOf
@@ -24,12 +25,12 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
-** [1/19] Doubly Linked List
+** [2/26] Doubly Linked List
 + [X] getFirst
 + [X] getLast
 + [ ] getSize
-+ [ ] nodeAtIndex
 + [ ] addNode
++ [ ] add
 + [ ] nodeAtIndex
 + [ ] atIndex
 + [ ] indexOf
