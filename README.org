@@ -58,7 +58,6 @@ This an implementation of standard data structures in Typescript for educational
 + [X] peak
 + [ ] toString
 + [ ] toArray
-+ [ ] size
 + [ ] isEmpty
 ** [2/2] Queue
 + [X] getFirst
@@ -68,7 +67,6 @@ This an implementation of standard data structures in Typescript for educational
 + [X] dequeue
 + [ ] toString
 + [ ] toArray
-+ [ ] size
 + [ ] isEmpty
 ** [0/0] Binary Tree
 ** [0/0] Binary Search Tree
