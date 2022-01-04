@@ -9,6 +9,14 @@ export class Stack<T> {
     this.size++;
   }
 
+  getHead(): SinglyLinkedNode<T> | null {
+    return this.frames.getHead();
+  }
+
+  getSize(): number {
+    return this.size;
+  }
+
   push(element: T): void {
     this.frames.insertBeginning(element);
     this.size++;
@@ -26,13 +34,5 @@ export class Stack<T> {
   peak(): T | null {
     let head = this.getHead();
     return head ? head.element : null;
-  }
-
-  getSize(): number {
-    return this.size;
-  }
-
-  getHead(): SinglyLinkedNode<T> | null {
-    return this.frames.getHead();
   }
 }
