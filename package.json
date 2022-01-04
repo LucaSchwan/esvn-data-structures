@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --require ts-node/register 'test/**/*.test.ts'",
-    "test:watch": "npm run test -- --watch --watch-files 'test/**/*.test.ts', 'src/**/*.ts'"
+    "test": "mocha",
+    "test:watch": "npm run test --watch --watch-files 'test/**/*.test.ts', 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
