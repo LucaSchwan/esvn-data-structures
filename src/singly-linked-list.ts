@@ -25,10 +25,10 @@ export class SinglyLinkedList<T> {
   }
 
   addNode(node: SinglyLinkedNode<T>): SinglyLinkedNode<T> {
-    let p: SinglyLinkedNode<T>;
     if (this.head == null) {
       this.head = node;
     } else {
+      let p: SinglyLinkedNode<T>;
       p = this.head;
       while (p.next != null) p = p.next;
       p.next = node;
@@ -38,7 +38,6 @@ export class SinglyLinkedList<T> {
   }
 
   add(element: T): SinglyLinkedNode<T> {
-    let p: SinglyLinkedNode<T>;
     let temp: SinglyLinkedNode<T> = {
       element: element,
       next: null,
@@ -46,6 +45,7 @@ export class SinglyLinkedList<T> {
     if (this.head == null) {
       this.head = temp;
     } else {
+      let p: SinglyLinkedNode<T>;
       p = this.head;
       while (p.next != null) p = p.next;
       p.next = temp;
