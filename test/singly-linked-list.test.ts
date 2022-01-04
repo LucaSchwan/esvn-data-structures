@@ -8,14 +8,14 @@ describe('SinglyLinkedList', () => {
   });
 
   it('should be able to be initialised with a Node containing an element as head.', () => {
-    let list = new SinglyLinkedList<string>('test');
+    let list = new SinglyLinkedList('test');
     let head = list.getHead();
     expect(head).to.not.equal(null);
     if (head) expect(head.element).to.equal('test');
   });
 
-  it('should add a node to the getHead() if the LinkedList is empty.', () => {
-    let list = new SinglyLinkedList<string>();
+  it('should add a node to the head if the LinkedList is empty.', () => {
+    let list = new SinglyLinkedList();
     let node: SinglyLinkedNode<string> = {
       element: 'test',
       next: null,
@@ -28,7 +28,7 @@ describe('SinglyLinkedList', () => {
   });
 
   it('should add a Node as the next of the last Node if there are already Nodes in the LinkedList.', () => {
-    let list = new SinglyLinkedList<string>('test');
+    let list = new SinglyLinkedList('test');
     let node: SinglyLinkedNode<string> = {
       element: 'new',
       next: null,
@@ -42,8 +42,8 @@ describe('SinglyLinkedList', () => {
     }
   });
 
-  it('should create a new Node and add it to the getHead() or next of the last Node if passed a parameter that is the type of the LinkedList.', () => {
-    let list = new SinglyLinkedList<string>();
+  it('should create a new Node and add it to the head or next of the last Node if passed a parameter that is the type of the LinkedList.', () => {
+    let list = new SinglyLinkedList();
 
     // add to the head
     list.add('test');
@@ -60,13 +60,23 @@ describe('SinglyLinkedList', () => {
     }
   });
 
+  it("should increase it's size by one if an element is added.", () => {
+    let list = new SinglyLinkedList();
+    let size = list.getSize();
+
+    list.add('test');
+    let newSize = list.getSize();
+
+    expect(newSize - size).to.equal(1);
+  });
+
   it('should insert a Node after a given node.', () => {
     let node: SinglyLinkedNode<string> = {
       element: 'first',
       next: null,
     };
 
-    let list = new SinglyLinkedList<string>();
+    let list = new SinglyLinkedList();
     list.addNode(node);
 
     list.insertAfter(node, 'new');
@@ -95,7 +105,7 @@ describe('SinglyLinkedList', () => {
       element: 'test',
       next: null,
     };
-    let list = new SinglyLinkedList<string>();
+    let list = new SinglyLinkedList();
     list.addNode(node);
 
     list.add('test');
@@ -106,7 +116,7 @@ describe('SinglyLinkedList', () => {
   });
 
   it('should remove the first Node of a LinkedList.', () => {
-    let list = new SinglyLinkedList<string>();
+    let list = new SinglyLinkedList();
     list.add('test');
     let head = list.getHead();
     expect(head).to.not.equal(null);

@@ -2,11 +2,9 @@ import { SinglyLinkedList, SinglyLinkedNode } from './singly-linked-list';
 
 export class Stack<T> {
   protected frames = new SinglyLinkedList<T>();
-  protected size: number = 0;
 
   constructor(element?: T) {
     element ? this.frames.insertBeginning(element) : null;
-    this.size++;
   }
 
   getHead(): SinglyLinkedNode<T> | null {
@@ -14,12 +12,11 @@ export class Stack<T> {
   }
 
   getSize(): number {
-    return this.size;
+    return this.frames.getSize();
   }
 
   push(element: T): void {
     this.frames.insertBeginning(element);
-    this.size++;
   }
 
   pop(): T | null | never {
@@ -27,7 +24,7 @@ export class Stack<T> {
       throw new Error('StackUnderflow');
     }
     let head = this.getHead();
-    this.size--;
+    this.frames.removeBeginning();
     return head ? head.element : null;
   }
 

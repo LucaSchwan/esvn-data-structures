@@ -5,6 +5,7 @@ export interface SinglyLinkedNode<T> {
 
 export class SinglyLinkedList<T> {
   protected head: SinglyLinkedNode<T> | null;
+  protected size = 0;
 
   constructor(element?: T) {
     this.head = element
@@ -19,6 +20,10 @@ export class SinglyLinkedList<T> {
     return this.head;
   }
 
+  getSize(): number {
+    return this.size;
+  }
+
   addNode(node: SinglyLinkedNode<T>): SinglyLinkedNode<T> {
     let p: SinglyLinkedNode<T>;
     if (this.head == null) {
@@ -28,6 +33,7 @@ export class SinglyLinkedList<T> {
       while (p.next != null) p = p.next;
       p.next = node;
     }
+    this.size++;
     return this.head;
   }
 
@@ -44,6 +50,7 @@ export class SinglyLinkedList<T> {
       while (p.next != null) p = p.next;
       p.next = temp;
     }
+    this.size++;
     return this.head;
   }
 
@@ -54,6 +61,7 @@ export class SinglyLinkedList<T> {
     };
     newNode.next = node.next;
     node.next = newNode;
+    this.size++;
   }
 
   insertBeginning(element: T): void {
@@ -63,13 +71,16 @@ export class SinglyLinkedList<T> {
     };
     node.next = this.head;
     this.head = node;
+    this.size++;
   }
 
   removeAfter(node: SinglyLinkedNode<T>): void {
     if (node.next) node.next = node.next.next;
+    this.size--;
   }
 
   removeBeginning(): void {
     if (this.head) this.head = this.head.next;
+    this.size--;
   }
 }
