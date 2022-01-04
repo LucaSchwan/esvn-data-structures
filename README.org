@@ -5,24 +5,74 @@ This an implementation of standard data structures in Typescript for educational
 
 * Data Structures
 
-+ [X] Singly Linked List
-  + addNode
-  + newNode
-  + insertAfter
-  + insertBeginning
-  + removeAfter
-  + removeBeginning  
-+ [ ] Doubly Linked List
-+ [X] Stack
-  + push
-  + pop
-  + peak
-+ [X] Queue
-  + enqueue
-  + dequeue
-+ [ ]Binary Tree
-+ [ ]Binary Search Tree
-+ [ ]Heap
-+ [ ]Hashing
-+ [ ]Graph
-+ [ ]Matrix
+** [5/10]Singly Linked List
++ [X] getHead
++ [ ] getSize
++ [X] addNode
++ [ ] nodeAtIndex
++ [ ] atIndex
++ [ ] indexOf
++ [X] insertAfter
++ [X] insertBeginning
++ [ ] insert
++ [X] removeAfter
++ [X] removeBeginning 
++ [ ] removeAtIndex
++ [ ] contains
++ [ ] reverse
++ [ ] forEach
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
+** [1/19] Doubly Linked List
++ [X] getFirst
++ [X] getLast
++ [ ] getSize
++ [ ] nodeAtIndex
++ [ ] addNode
++ [ ] nodeAtIndex
++ [ ] atIndex
++ [ ] indexOf
++ [ ] insertBefore
++ [ ] insertAfter
++ [ ] insertBeginning
++ [ ] insertEnd
++ [ ] insert
++ [ ] removeBefore
++ [ ] removeAfter
++ [ ] removeBeginning 
++ [ ] removeEnd 
++ [ ] removeAtIndex
++ [ ] contains
++ [ ] reverse
++ [ ] forEach
++ [ ] toString
++ [ ] toArray
++ [ ] size
++ [ ] isEmpty
+** [5/9] Stack
++ [X] getHead
++ [X] getSize
++ [X] push
++ [X] pop
++ [X] peak
++ [ ] toString
++ [ ] toArray
++ [ ] size
++ [ ] isEmpty
+** [2/2] Queue
++ [X] getFirst
++ [X] getLast
++ [ ] getSize
++ [X] enqueue
++ [X] dequeue
++ [ ] toString
++ [ ] toArray
++ [ ] size
++ [ ] isEmpty
+** [0/0] Binary Tree
+** [0/0] Binary Search Tree
+** [0/0] Heap
+** [0/0] Hashing
+** [0/0] Graph
+** [0/0] Matrix
