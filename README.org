@@ -25,10 +25,10 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
-** [2/26] Doubly Linked List
+** [7/25] Doubly Linked List
 + [X] getFirst
 + [X] getLast
-+ [ ] getSize*
++ [X] getSize
 + [ ] addNode*
 + [ ] add*
 + [ ] nodeAtIndex
@@ -36,13 +36,13 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] indexOf
 + [ ] insertBefore*
 + [ ] insertAfter*
-+ [ ] insertBeginning*
-+ [ ] insertEnd*
++ [X] insertBeginning
++ [X] insertEnd
 + [ ] insert
 + [ ] removeBefore*
 + [ ] removeAfter*
-+ [ ] removeBeginning *
-+ [ ] removeEnd *
++ [X] removeBeginning
++ [X] removeEnd
 + [ ] removeAtIndex
 + [ ] contains
 + [ ] reverse
@@ -60,10 +60,10 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
-** [2/2] Queue
+** [5/8] Queue
 + [X] getFirst
 + [X] getLast
-+ [ ] getSize
++ [X] getSize
 + [X] enqueue
 + [X] dequeue
 + [ ] toString
