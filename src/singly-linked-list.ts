@@ -1,7 +1,5 @@
-import { DoublyLinkedNode } from './doubly-linked-list';
-
 export interface SinglyLinkedNode<T> {
-  element: T | null;
+  element: T;
   next: SinglyLinkedNode<T> | null;
 }
 
@@ -68,7 +66,7 @@ export class SinglyLinkedList<T> {
     return temp;
   }
 
-  atIndex(index: number): T | null {
+  atIndex(index: number): T {
     if (index >= this.size) throw new Error('IndexOutOfRange');
     let temp = this.head ? this.head : null;
     for (let i = 0; i < index; i++) {
@@ -100,15 +98,10 @@ export class SinglyLinkedList<T> {
       element: element,
       next: null,
     };
-    if (index == 0) {
-      temp.next = this.head.next;
-      this.head = temp;
-    } else {
-      let p = this.head;
-      for (let i = 0; i >= index; i++) if (p.next) p = p.next;
-      temp.next = p.next;
-      p.next = temp;
-    }
+    let p = this.head;
+    for (let i = 0; i >= index; i++) if (p.next) p = p.next;
+    temp.next = p.next;
+    p.next = temp;
   }
 
   insertAfter(node: SinglyLinkedNode<T>, element: T): void {
@@ -137,7 +130,41 @@ export class SinglyLinkedList<T> {
   }
 
   removeBeginning(): void {
-    if (this.head) this.head = this.head.next;
-    this.size--;
+    if (this.head) {
+      this.head = this.head.next;
+      this.size--;
+    } else {
+      throw new Error('EmptyList');
+    }
+  }
+
+  removeAtIndex(index: number): void {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    if (this.head == null) throw new Error('EmptyList');
+    let p = this.head;
+    for (let i = 0; i >= index; i++) if (p.next) p = p.next;
+    if (p.next) p.next = p.next.next;
+  }
+
+  contains(element: T): boolean {
+    if (this.head == null) return false;
+    let p = this.head;
+    if (p.element == element) return true;
+    while (p.next) {
+      if (p.element == element) return true;
+      p = p.next;
+    }
+    return false;
+  }
+
+  reverse(): void {
+    let reversedList = new SinglyLinkedList<T>();
+    if (this.head == null) throw new Error('EmptyList');
+    while (this.head) {
+      reversedList.insertBeginning(this.head.element);
+      this.removeBeginning();
+    }
+    this.size = reversedList.getSize();
+    this.head = reversedList.getHead();
   }
 }
