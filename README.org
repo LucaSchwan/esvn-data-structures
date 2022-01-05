@@ -25,6 +25,7 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
++ [ ] prettyPrint
 ** [7/25] Doubly Linked List
 + [X] getFirst
 + [X] getLast
@@ -51,6 +52,7 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toArray
 + [ ] size
 + [ ] isEmpty
++ [ ] prettyPrint
 ** [5/9] Stack
 + [X] getHead
 + [X] getSize
@@ -60,7 +62,8 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
-** [5/8] Queue
++ [ ] prettyPrint
+** [5/9] Queue
 + [X] getFirst
 + [X] getLast
 + [X] getSize
@@ -69,9 +72,34 @@ This an implementation of standard data structures in Typescript for educational
 + [ ] toString
 + [ ] toArray
 + [ ] isEmpty
-** [0/0] Binary Tree
-** [0/0] Binary Search Tree
-** [0/0] Heap
-** [0/0] Hashing
-** [0/0] Graph
-** [0/0] Matrix
++ [ ] prettyPrint
+** [0/4] Binary Tree
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
+** [0/4] Binary Search Tree
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
+** [0/4] Heap
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
+** [0/4] Hashing
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
+** [0/4] Graph
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
+** [0/4] Matrix
++ [ ] toString
++ [ ] toArray
++ [ ] isEmpty
++ [ ] prettyPrint
