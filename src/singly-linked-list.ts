@@ -1,3 +1,5 @@
+import { DoublyLinkedNode } from './doubly-linked-list';
+
 export interface SinglyLinkedNode<T> {
   element: T | null;
   next: SinglyLinkedNode<T> | null;
@@ -14,6 +16,7 @@ export class SinglyLinkedList<T> {
           next: null,
         }
       : null;
+    this.size++;
   }
 
   getHead(): SinglyLinkedNode<T> | null {
@@ -52,6 +55,60 @@ export class SinglyLinkedList<T> {
     }
     this.size++;
     return this.head;
+  }
+
+  nodeAtIndex(index: number): SinglyLinkedNode<T> {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    let temp = this.head ? this.head : null;
+    for (let i = 0; i < index; i++) {
+      if (temp) temp = temp.next;
+    }
+
+    if (temp == null) throw new Error('EmptyList');
+    return temp;
+  }
+
+  atIndex(index: number): T | null {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    let temp = this.head ? this.head : null;
+    for (let i = 0; i < index; i++) {
+      if (temp) temp = temp.next;
+    }
+
+    if (temp == null) throw new Error('EmptyList');
+    return temp.element;
+  }
+
+  indexOf(element: T): number {
+    if (this.head == null) throw new Error('EmptyList');
+    let temp = this.head;
+    let index = 0;
+    while (temp.element != element) {
+      if (temp.next == null) {
+        throw new Error('ElementNotFound');
+      }
+      temp = temp.next;
+      index++;
+    }
+    return index;
+  }
+
+  insert(element: T, index: number): void {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    if (this.head == null) throw new Error('EmptyList');
+    let temp: SinglyLinkedNode<T> = {
+      element: element,
+      next: null,
+    };
+    if (index == 0) {
+      temp.next = this.head.next;
+      this.head = temp;
+    } else {
+      let p = this.head;
+      for (let i = 0; i >= index; i++) if (p.next) p = p.next;
+      temp.next = p.next;
+      p.next = temp;
+    }
   }
 
   insertAfter(node: SinglyLinkedNode<T>, element: T): void {

@@ -125,4 +125,46 @@ describe('SinglyLinkedList', () => {
     list.removeBeginning();
     expect(list.getHead()).to.equal(null);
   });
+
+  it('should return a node at an Index.', () => {
+    let list = new SinglyLinkedList('test');
+    let node: SinglyLinkedNode<string> = {
+      element: 'new',
+      next: null,
+    };
+    list.addNode(node);
+
+    let sameNode = list.nodeAtIndex(1);
+
+    expect(sameNode).to.equal(node);
+  });
+
+  it('should return the element at an Index', () => {
+    let list = new SinglyLinkedList('test');
+    let node: SinglyLinkedNode<string> = {
+      element: 'new',
+      next: null,
+    };
+    list.addNode(node);
+
+    let element = list.atIndex(1);
+
+    expect(element).to.equal(node.element);
+  });
+
+  it('should return the index of an element.', () => {
+    let list = new SinglyLinkedList('test');
+    list.add('new');
+
+    expect(list.indexOf('new')).to.equal(1);
+  });
+
+  it('should insert a Node at a given index.', () => {
+    let list = new SinglyLinkedList('test');
+    list.add('test');
+
+    list.insert('new', 1);
+
+    expect(list.atIndex(1)).to.equal('new');
+  });
 });

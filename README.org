@@ -5,14 +5,14 @@ This an implementation of standard data structures in Typescript for educational
 
 * Data Structures
 
-** [7/18]Singly Linked List
+** [11/20]Singly Linked List
 + [X] getHead
 + [X] getSize
 + [X] addNode
 + [X] add
-+ [ ] nodeAtIndex
-+ [ ] atIndex
-+ [ ] indexOf
++ [X] nodeAtIndex
++ [X] atIndex
++ [X] indexOf
 + [X] insertAfter
 + [X] insertBeginning
 + [ ] insert
