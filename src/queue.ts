@@ -1,36 +1,34 @@
-// TODO implement DoublyLinkedList and have Queue use it
-
-// temporary until DoublyLinkedList is implemented
-export interface Node<T> {
-  element: T | null;
-  next: Node<T> | null;
-  prev: Node<T> | null;
-}
+import { DoublyLinkedList, DoublyLinkedNode } from './doubly-linked-list';
 
 export class Queue<T> {
-  firstNode: Node<T> | null;
-  lastNode: Node<T> | null;
+  list = new DoublyLinkedList<T>();
 
-  constructor(element?: Node<T>) {
-    this.firstNode = element || null;
-    this.lastNode = element || null;
+  constructor(element?: T) {
+    element ? this.list.insertBeginning(element) : null;
+  }
+
+  getFirst(): DoublyLinkedNode<T> | null {
+    return this.list.getFirst();
+  }
+
+  getLast(): DoublyLinkedNode<T> | null {
+    return this.list.getLast();
+  }
+
+  getSize(): number {
+    return this.list.getSize();
   }
 
   enqueue(element: T): void {
-    let node: Node<T> = {
-      element: element,
-      next: this.firstNode,
-      prev: null,
-    };
-    this.lastNode = node;
+    this.list.insertBeginning(element);
   }
 
   dequeue(): T | null | never {
-    let element: Node<T> | null = this.lastNode;
-    if (element == null) {
+    let node: DoublyLinkedNode<T> | null = this.list.getLast();
+    if (node == null) {
       throw new Error('QueueEmpty');
     }
-    this.lastNode = element.prev;
-    return element.element;
+    this.list.removeEnd();
+    return node ? node.element : null;
   }
 }
