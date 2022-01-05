@@ -5,7 +5,7 @@ This an implementation of standard data structures in Typescript for educational
 
 * Data Structures
 
-** [11/20]Singly Linked List
+** [12/20]Singly Linked List
 + [X] getHead
 + [X] getSize
 + [X] addNode
@@ -15,7 +15,7 @@ This an implementation of standard data structures in Typescript for educational
 + [X] indexOf
 + [X] insertAfter
 + [X] insertBeginning
-+ [ ] insert
++ [X] insert
 + [X] removeAfter
 + [X] removeBeginning 
 + [ ] removeAtIndex
