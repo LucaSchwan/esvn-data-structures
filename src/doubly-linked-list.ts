@@ -69,4 +69,14 @@ export class DoublyLinkedList<T> {
     this.lastNode = node;
     this.size++;
   }
+
+  removeBeginning(): void {
+    if (this.firstNode) this.firstNode = this.firstNode.next;
+    if (this.firstNode) this.firstNode.prev = null;
+  }
+
+  removeEnd(): void {
+    if (this.lastNode) this.lastNode = this.lastNode.prev;
+    if (this.lastNode) this.lastNode.next = null;
+  }
 }

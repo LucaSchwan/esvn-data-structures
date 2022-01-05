@@ -46,4 +46,18 @@ describe('DoublyLinkedList', () => {
 
     expect(list.getLast()).to.not.equal(null);
   });
+
+  it('should remove a Node from the beginning.', () => {
+    let list = new DoublyLinkedList('test');
+    list.removeBeginning();
+
+    expect(list.getFirst()).to.equal(null);
+  });
+
+  it('should remove a Node from the end.', () => {
+    let list = new DoublyLinkedList('test');
+    list.removeEnd();
+
+    expect(list.getLast()).to.equal(null);
+  });
 });
