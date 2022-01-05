@@ -27,18 +27,15 @@ describe('DoublyLinkedList', () => {
     expect(list.getFirst()).to.not.equal(null);
   });
 
-  it(
-    "should increase it's size by one if an element is inserted in the beginning."
-  ),
-    () => {
-      let list = new DoublyLinkedList('test');
-      let size = list.getSize();
+  it("should increase it's size if an element is inserted", () => {
+    let list = new DoublyLinkedList('test');
+    let size = list.getSize();
 
-      list.insertBeginning('new');
-      let newSize = list.getSize();
+    list.insertBeginning('test');
+    let newSize = list.getSize();
 
-      expect(newSize - size).to.equal(1);
-    };
+    expect(newSize - size).to.equal(1);
+  });
 
   it('should add a Node at the end', () => {
     let list = new DoublyLinkedList();
