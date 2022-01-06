@@ -5,27 +5,237 @@ This an implementation of standard data structures in Typescript for educational
 
 * Data Structures
 
-** [20/20]Singly Linked List
-+ [X] getHead
-+ [X] getSize
-+ [X] addNode
-+ [X] add
-+ [X] nodeAtIndex
-+ [X] atIndex
-+ [X] indexOf
-+ [X] insertAfter
-+ [X] insertBeginning
-+ [X] insert
-+ [X] removeAfter
-+ [X] removeBeginning 
-+ [X] removeAtIndex
-+ [X] contains
-+ [X] reverse
-+ [X] forEach
-+ [X] toString
-+ [X] toArray
-+ [X] isEmpty
-+ [X] prettyPrint
+** Singly Linked List
+
+It can be initialised without a type, with a type or with an inferred type using the constructor: 
+
+#+begin_src typescript
+
+let list = new SinglyLinkedList();
+
+let stringList = new SinglyLinkedList<string>();
+
+let numberList = new SinglyLinkedList(1);
+
+#+end_src
+
+Nodes in the list are interfaces defined by:
+
+#+begin_src typescript
+
+interface SinglyLinkedNode<T> {
+  element: T;
+  next: SinglyLinkedNode<T> | null;
+}
+
+#+end_src
+
+***  getHead()
+
+Returns the head of the list
+
+#+begin_src typescript
+
+list.getHead();
+
+#+end_src
+
+***  getSize()
+
+Returns the size
+
+#+begin_src typescript
+
+list.getSize();
+
+#+end_src
+
+***  addNode()
+
+Adds a node to the end of the list
+
+
+#+begin_src typescript
+
+let node: SinglyLinkedNode<string> = {
+  element: 'test',
+  next: null,
+};
+list.addNode(node);
+
+#+end_src
+***  add()
+
+Adds a node with an element to the end of the list
+
+#+begin_src typescript
+
+list.add('test');
+
+#+end_src>
+
+***  nodeAtIndex()
+
+Returns a Node at a given index
+
+#+begin_src typescript
+
+list.nodeAtIndex(2); // returns a SinglyLinkedNode
+
+#+end_src
+
+***  atIndex()
+
+Returns the element at a given Index
+
+#+begin_src typescript
+
+list.atIndex(2); // returns an element of the type of the list
+
+#+end_src
+
+***  indexOf()
+
+Returns the index of an element
+
+#+begin_src typescript
+
+list.indexOff('test'); // returns index of 'test' if in list and throws error if not
+
+#+end_src
+
+***  insert()
+
+Inserts an element at a given Index
+
+#+begin_src typescript
+
+list.insert('test', 3); // inserts 'test' at index 3 if the list is that long else it throws an error
+
+#+end_src
+***  insertAfter()
+
+Inserts an element after a given node
+
+#+begin_src typescript
+
+let node = list.nodeAtIndex(2);
+list.insertAfter(node, 'test'); // inserts 'test' after the node at index 2
+
+#+end_src
+
+***  insertBeginning()
+
+Inserts an element at the beginning of the list
+
+#+begin_src shell
+
+list.insertBeginning('first');
+
+#+end_src
+
+***  removeAfter()
+
+Removes an element after a given node
+
+#+begin_src shell
+
+let node = list.nodeAtIndex(2);
+list.removeAfter(node);
+
+#+end_src
+
+***  removeBeginning()
+
+Removes the element at the beginning of the list
+
+#+begin_src shell
+
+list.removeBeginning();
+
+#+end_src
+
+***  removeAtIndex()
+
+Removes an element at an Index
+
+#+begin_src typescript
+
+list.removeAtIndex(3); // removes the element at index `3`
+
+#+end_src
+***  contains()
+
+Checks if  a list contains an element
+
+#+begin_src typescript
+
+list.contains('test'); // returns `true` if 'test' is in the list and `false if not`
+
+#+end_src
+
+***  reverse()
+
+Reverses a list
+
+#+begin_src  typescript
+
+list.reverse();
+
+#+end_src
+
+***  forEach()
+
+Calls a callback function for each element of the list
+
+#+begin_src shell
+
+list.forEach((value) => {
+  console.log(value);
+});
+
+#+end_src
+
+***  toString()
+
+Returns a String of the elements in the list
+
+#+begin_src typescript
+
+list.toString(); // returns a string in the form of 'element, element, element'
+
+#+end_src
+
+***  toArray()
+
+Returns an array of the elements in the order of the list
+
+#+begin_src typescript
+
+list.toArray(); // returns an array [element, element, element]
+
+#+end_src
+
+***  isEmpty()
+
+Checks if a list is Empty
+
+#+begin_src typescript
+
+list.isEmpty(); // returns `true` if list is empty and `false` if not
+
+#+end_src
+
+***  prettyPrint()
+
+Returns a pretty printed string of the list
+
+#+begin_src typescript
+
+list.prettyPrint(); // returns a string in the form of 'element -> element -> element'
+
+#+end_src
+
 ** [7/25] Doubly Linked List
 + [X] getFirst
 + [X] getLast
