@@ -195,4 +195,75 @@ describe('SinglyLinkedList', () => {
     expect(list.atIndex(0)).to.equal('end');
     expect(list.atIndex(1)).to.equal('start');
   });
+
+  it('should apply a callback function for each element.', () => {
+    let list = new SinglyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+
+    let sum = 0;
+
+    list.forEach((element: number) => {
+      sum += element;
+    });
+
+    expect(sum).to.equal(10);
+  });
+
+  it('should return a stringified version of the list.', () => {
+    let list = new SinglyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let stringified = list.toString();
+
+    expect(stringified).to.equal('1, 2, 3, 4, 5');
+  });
+
+  it('should return an array with the elements.', () => {
+    let list = new SinglyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let array = list.toArray();
+    let compArray = [1, 2, 3, 4, 5];
+
+    let arrayEquals = (a: number[], b: number[]) => {
+      return (
+        Array.isArray(a) &&
+        Array.isArray(b) &&
+        a.length === b.length &&
+        a.every((val, index) => val === b[index])
+      );
+    };
+
+    expect(arrayEquals(array, compArray)).to.equal(true);
+  });
+
+  it('should return if the list is empty or not.', () => {
+    let list = new SinglyLinkedList();
+
+    expect(list.isEmpty()).to.equal(true);
+
+    list.add('test');
+
+    expect(list.isEmpty()).to.equal(false);
+  });
+
+  it('should pretty print the list.', () => {
+    let list = new SinglyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let prettyPrinted = list.prettyPrint();
+
+    expect(prettyPrinted).to.equal('1 -> 2 -> 3 -> 4 -> 5');
+  });
 });

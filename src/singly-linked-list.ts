@@ -148,9 +148,8 @@ export class SinglyLinkedList<T> {
 
   contains(element: T): boolean {
     if (this.head == null) return false;
-    let p = this.head;
-    if (p.element == element) return true;
-    while (p.next) {
+    let p: SinglyLinkedNode<T> | null = this.head;
+    while (p) {
       if (p.element == element) return true;
       p = p.next;
     }
@@ -166,5 +165,60 @@ export class SinglyLinkedList<T> {
     }
     this.size = reversedList.getSize();
     this.head = reversedList.getHead();
+  }
+
+  forEach(callback: (element: T) => any): void {
+    if (this.head == null) throw new Error('EmptyList');
+    let p: SinglyLinkedNode<T> | null = this.head;
+    while (p) {
+      callback(p.element);
+      p = p.next;
+    }
+  }
+
+  toString(): string {
+    let p: SinglyLinkedNode<T> | null = this.head;
+    let str = '';
+    if (p) {
+      str += `${p.element as unknown as string}`;
+      p = p.next;
+    } else {
+      throw new Error('EmptyList');
+    }
+    while (p) {
+      str += `, ${p.element as unknown as string}`;
+      p = p.next;
+    }
+    return str;
+  }
+
+  toArray(): Array<T> {
+    let array: Array<T> = [];
+    let p: SinglyLinkedNode<T> | null = this.head;
+    while (p) {
+      array.push(p.element);
+      p = p.next;
+    }
+    return array;
+  }
+
+  isEmpty(): boolean {
+    return this.head ? false : true;
+  }
+
+  prettyPrint(): string {
+    let p: SinglyLinkedNode<T> | null = this.head;
+    let str = '';
+    if (p) {
+      str += `${p.element as unknown as string}`;
+      p = p.next;
+    } else {
+      throw new Error('EmptyList');
+    }
+    while (p) {
+      str += ` -> ${p.element as unknown as string}`;
+      p = p.next;
+    }
+    return str;
   }
 }
