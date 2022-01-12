@@ -30,7 +30,7 @@ interface SinglyLinkedNode<T> {
 
 #+end_src
 
-***  getHead()
+*** getHead()
 
 Returns the head of the list
 
@@ -40,7 +40,7 @@ list.getHead();
 
 #+end_src
 
-***  getSize()
+*** getSize()
 
 Returns the size
 
@@ -50,7 +50,7 @@ list.getSize();
 
 #+end_src
 
-***  addNode()
+*** addNode()
 
 Adds a node to the end of the list
 
@@ -64,7 +64,7 @@ let node: SinglyLinkedNode<string> = {
 list.addNode(node);
 
 #+end_src
-***  add()
+*** add()
 
 Adds a node with an element to the end of the list
 
@@ -74,7 +74,7 @@ list.add('test');
 
 #+end_src>
 
-***  nodeAtIndex()
+*** nodeAtIndex()
 
 Returns a Node at a given index
 
@@ -84,7 +84,7 @@ list.nodeAtIndex(2); // returns a SinglyLinkedNode
 
 #+end_src
 
-***  atIndex()
+*** atIndex()
 
 Returns the element at a given Index
 
@@ -94,7 +94,7 @@ list.atIndex(2); // returns an element of the type of the list
 
 #+end_src
 
-***  indexOf()
+*** indexOf()
 
 Returns the index of an element
 
@@ -104,7 +104,7 @@ list.indexOff('test'); // returns index of 'test' if in list and throws error if
 
 #+end_src
 
-***  insert()
+*** insert()
 
 Inserts an element at a given Index
 
@@ -113,7 +113,7 @@ Inserts an element at a given Index
 list.insert('test', 3); // inserts 'test' at index 3 if the list is that long else it throws an error
 
 #+end_src
-***  insertAfter()
+*** insertAfter()
 
 Inserts an element after a given node
 
@@ -124,7 +124,7 @@ list.insertAfter(node, 'test'); // inserts 'test' after the node at index 2
 
 #+end_src
 
-***  insertBeginning()
+*** insertBeginning()
 
 Inserts an element at the beginning of the list
 
@@ -134,7 +134,7 @@ list.insertBeginning('first');
 
 #+end_src
 
-***  removeAfter()
+*** removeAfter()
 
 Removes an element after a given node
 
@@ -145,7 +145,7 @@ list.removeAfter(node);
 
 #+end_src
 
-***  removeBeginning()
+*** removeBeginning()
 
 Removes the element at the beginning of the list
 
@@ -155,7 +155,7 @@ list.removeBeginning();
 
 #+end_src
 
-***  removeAtIndex()
+*** removeAtIndex()
 
 Removes an element at an Index
 
@@ -164,7 +164,7 @@ Removes an element at an Index
 list.removeAtIndex(3); // removes the element at index `3`
 
 #+end_src
-***  contains()
+*** contains()
 
 Checks if  a list contains an element
 
@@ -174,7 +174,7 @@ list.contains('test'); // returns `true` if 'test' is in the list and `false if 
 
 #+end_src
 
-***  reverse()
+*** reverse()
 
 Reverses a list
 
@@ -184,7 +184,7 @@ list.reverse();
 
 #+end_src
 
-***  forEach()
+*** forEach()
 
 Calls a callback function for each element of the list
 
@@ -196,7 +196,7 @@ list.forEach((value) => {
 
 #+end_src
 
-***  toString()
+*** toString()
 
 Returns a String of the elements in the list
 
@@ -206,7 +206,7 @@ list.toString(); // returns a string in the form of 'element, element, element'
 
 #+end_src
 
-***  toArray()
+*** toArray()
 
 Returns an array of the elements in the order of the list
 
@@ -216,7 +216,7 @@ list.toArray(); // returns an array [element, element, element]
 
 #+end_src
 
-***  isEmpty()
+*** isEmpty()
 
 Checks if a list is Empty
 
@@ -226,7 +226,7 @@ list.isEmpty(); // returns `true` if list is empty and `false` if not
 
 #+end_src
 
-***  prettyPrint()
+*** prettyPrint()
 
 Returns a pretty printed string of the list
 
