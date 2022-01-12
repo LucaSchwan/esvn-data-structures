@@ -75,6 +75,42 @@ describe('DoublyLinkedList', () => {
     expect(list.getFirst()).to.not.equal(null);
   });
 
+  it('should add a Node before another node', () => {
+    let node: DoublyLinkedNode<string> = {
+      element: 'first',
+      next: null,
+      prev: null,
+    };
+
+    let list = new DoublyLinkedList();
+    list.addNode(node);
+
+    list.insertBefore(node, 'new');
+
+    expect(node.prev).to.not.equal(null);
+    let first = list.getFirst();
+    expect(first).to.not.equal(null);
+    if (first) expect(first.element).to.equal('new');
+  });
+
+  it('should insert a Node after a given node.', () => {
+    let node: DoublyLinkedNode<string> = {
+      element: 'first',
+      next: null,
+      prev: null,
+    };
+
+    let list = new DoublyLinkedList();
+    list.addNode(node);
+
+    list.insertAfter(node, 'new');
+
+    expect(node.next).to.not.equal(null);
+    let first = list.getFirst();
+    expect(first).to.not.equal(null);
+    if (first) if (first.next) expect(first.next.element).to.equal('new');
+  });
+
   it("should increase it's size if an element is inserted", () => {
     let list = new DoublyLinkedList('test');
     let size = list.getSize();

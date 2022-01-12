@@ -120,6 +120,31 @@ export class DoublyLinkedList<T> {
     p.next = temp;
   }
 
+  insertBefore(node: DoublyLinkedNode<T>, element: T) {
+    let newNode: DoublyLinkedNode<T> = {
+      element: element,
+      next: null,
+      prev: null,
+    };
+    newNode.next = node;
+    newNode.prev = node.prev;
+    node.prev = newNode;
+    if (this.firstNode == node) this.firstNode = newNode;
+    this.size++;
+  }
+
+  insertAfter(node: DoublyLinkedNode<T>, element: T) {
+    let newNode: DoublyLinkedNode<T> = {
+      element: element,
+      next: null,
+      prev: null,
+    };
+    newNode.next = node.next;
+    newNode.prev = node;
+    node.next = newNode;
+    this.size++;
+  }
+
   insertBeginning(element: T): void {
     let node: DoublyLinkedNode<T> = {
       element: element,
