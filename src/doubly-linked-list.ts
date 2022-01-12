@@ -1,5 +1,5 @@
 export interface DoublyLinkedNode<T> {
-  element: T | null;
+  element: T;
   next: DoublyLinkedNode<T> | null;
   prev: DoublyLinkedNode<T> | null;
 }
@@ -79,6 +79,17 @@ export class DoublyLinkedList<T> {
 
     if (temp == null) throw new Error('EmptyList');
     return temp;
+  }
+
+  atIndex(index: number): T {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    let temp = this.firstNode ? this.firstNode : null;
+    for (let i = 0; i < index; i++) {
+      if (temp) temp = temp.next;
+    }
+
+    if (temp == null) throw new Error('EmptyList');
+    return temp.element;
   }
 
   insertBeginning(element: T): void {

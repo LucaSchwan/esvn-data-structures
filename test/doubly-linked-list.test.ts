@@ -119,4 +119,18 @@ describe('DoublyLinkedList', () => {
 
     expect(sameNode).to.equal(node);
   });
+
+  it('should return the element at an Index', () => {
+    let list = new DoublyLinkedList('test');
+    let node: DoublyLinkedNode<string> = {
+      element: 'new',
+      next: null,
+      prev: null,
+    };
+    list.addNode(node);
+
+    let element = list.atIndex(1);
+
+    expect(element).to.equal(node.element);
+  });
 });
