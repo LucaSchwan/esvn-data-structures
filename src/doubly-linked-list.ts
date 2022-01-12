@@ -39,7 +39,7 @@ export class DoublyLinkedList<T> {
     return this.size;
   }
 
-  addNode(node: DoublyLinkedNode<T>) {
+  addNode(node: DoublyLinkedNode<T>): void {
     if (this.firstNode == null) {
       this.firstNode = node;
     } else {
@@ -52,7 +52,7 @@ export class DoublyLinkedList<T> {
     this.size++;
   }
 
-  add(element: T) {
+  add(element: T): void {
     let temp: DoublyLinkedNode<T> = {
       element: element,
       prev: null,
@@ -104,6 +104,20 @@ export class DoublyLinkedList<T> {
       index++;
     }
     return index;
+  }
+
+  insert(element: T, index: number): void {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    if (this.firstNode == null) throw new Error('EmptyList');
+    let temp: DoublyLinkedNode<T> = {
+      element: element,
+      next: null,
+      prev: null,
+    };
+    let p = this.firstNode;
+    for (let i = 0; i >= index; i++) if (p.next) p = p.next;
+    temp.next = p.next;
+    p.next = temp;
   }
 
   insertBeginning(element: T): void {

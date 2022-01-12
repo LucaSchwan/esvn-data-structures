@@ -140,4 +140,13 @@ describe('DoublyLinkedList', () => {
 
     expect(list.indexOf('new')).to.equal(1);
   });
+
+  it('should insert a Node at a given index.', () => {
+    let list = new DoublyLinkedList('test');
+    list.add('test');
+
+    list.insert('new', 1);
+
+    expect(list.atIndex(1)).to.equal('new');
+  });
 });
