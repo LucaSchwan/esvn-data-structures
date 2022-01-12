@@ -92,6 +92,20 @@ export class DoublyLinkedList<T> {
     return temp.element;
   }
 
+  indexOf(element: T): number {
+    if (this.firstNode == null) throw new Error('EmptyList');
+    let temp = this.firstNode;
+    let index = 0;
+    while (temp.element != element) {
+      if (temp.next == null) {
+        throw new Error('ElementNotFound');
+      }
+      temp = temp.next;
+      index++;
+    }
+    return index;
+  }
+
   insertBeginning(element: T): void {
     let node: DoublyLinkedNode<T> = {
       element: element,

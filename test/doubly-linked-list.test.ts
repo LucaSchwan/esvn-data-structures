@@ -133,4 +133,11 @@ describe('DoublyLinkedList', () => {
 
     expect(element).to.equal(node.element);
   });
+
+  it('should return the index of an element.', () => {
+    let list = new DoublyLinkedList('test');
+    list.add('new');
+
+    expect(list.indexOf('new')).to.equal(1);
+  });
 });
