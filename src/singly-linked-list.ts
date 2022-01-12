@@ -25,7 +25,7 @@ export class SinglyLinkedList<T> {
     return this.size;
   }
 
-  addNode(node: SinglyLinkedNode<T>) {
+  addNode(node: SinglyLinkedNode<T>): void {
     if (this.head == null) {
       this.head = node;
     } else {
@@ -37,7 +37,7 @@ export class SinglyLinkedList<T> {
     this.size++;
   }
 
-  add(element: T) {
+  add(element: T): void {
     let temp: SinglyLinkedNode<T> = {
       element: element,
       next: null,
