@@ -236,12 +236,12 @@ list.prettyPrint(); // returns a string in the form of 'element -> element -> el
 
 #+end_src
 
-** [7/25] Doubly Linked List
+** [9/26] Doubly Linked List
 + [X] getFirst
 + [X] getLast
 + [X] getSize
-+ [ ] addNode*
-+ [ ] add*
++ [X] addNode
++ [X] add
 + [ ] nodeAtIndex
 + [ ] atIndex
 + [ ] indexOf

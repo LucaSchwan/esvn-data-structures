@@ -50,6 +50,24 @@ describe('DoublyLinkedList', () => {
     }
   });
 
+  it('should create a new Node and add it to the head or next of the last Node if passed a parameter that is the type of the LinkedList.', () => {
+    let list = new DoublyLinkedList();
+
+    // add to the head
+    list.add('test');
+    let head = list.getFirst();
+    if (head) expect(head.element).to.equal('test');
+
+    // add a new node after the head
+    list.add('test2');
+    head = list.getFirst();
+    expect(head).to.not.equal(null);
+    if (head) {
+      expect(head).to.not.equal(null);
+      if (head.next) expect(head.next.element).to.equal('test2');
+    }
+  });
+
   it('should add a Node at the beginning', () => {
     let list = new DoublyLinkedList();
     list.insertBeginning('test');
