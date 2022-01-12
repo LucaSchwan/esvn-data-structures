@@ -24,6 +24,7 @@ export class DoublyLinkedList<T> {
           prev: null,
         })
       : (this.lastNode = null);
+    if (this.firstNode) this.size = 1;
   }
 
   getFirst(): DoublyLinkedNode<T> | null {
@@ -67,6 +68,17 @@ export class DoublyLinkedList<T> {
     }
     this.lastNode = temp;
     this.size++;
+  }
+
+  nodeAtIndex(index: number): DoublyLinkedNode<T> {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    let temp = this.firstNode ? this.firstNode : null;
+    for (let i = 0; i < index; i++) {
+      if (temp) temp = temp.next;
+    }
+
+    if (temp == null) throw new Error('EmptyList');
+    return temp;
   }
 
   insertBeginning(element: T): void {
