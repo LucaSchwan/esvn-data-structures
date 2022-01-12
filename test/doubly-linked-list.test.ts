@@ -20,6 +20,36 @@ describe('DoublyLinkedList', () => {
     if (last) expect(last.element).to.equal('test');
   });
 
+  it('should add a node to the head if the LinkedList is empty.', () => {
+    let list = new DoublyLinkedList();
+    let node: DoublyLinkedNode<string> = {
+      element: 'test',
+      next: null,
+      prev: null,
+    };
+    list.addNode(node);
+
+    let head = list.getFirst();
+    expect(head).to.not.equal(null);
+    if (head) expect(head.element).to.equal('test');
+  });
+
+  it('should add a Node as the next of the last Node if there are already Nodes in the LinkedList.', () => {
+    let list = new DoublyLinkedList('test');
+    let node: DoublyLinkedNode<string> = {
+      element: 'new',
+      next: null,
+      prev: null,
+    };
+    list.addNode(node);
+    let head = list.getFirst();
+    expect(head).to.not.equal(null);
+    if (head) {
+      expect(head).to.not.equal(null);
+      if (head.next) expect(head.next.element).to.equal('new');
+    }
+  });
+
   it('should add a Node at the beginning', () => {
     let list = new DoublyLinkedList();
     list.insertBeginning('test');

@@ -38,6 +38,19 @@ export class DoublyLinkedList<T> {
     return this.size;
   }
 
+  addNode(node: DoublyLinkedNode<T>) {
+    if (this.firstNode == null) {
+      this.firstNode = node;
+    } else {
+      let p: DoublyLinkedNode<T>;
+      p = this.firstNode;
+      while (p.next != null) p = p.next;
+      p.next = node;
+    }
+    this.lastNode = node;
+    this.size++;
+  }
+
   insertBeginning(element: T): void {
     let node: DoublyLinkedNode<T> = {
       element: element,
