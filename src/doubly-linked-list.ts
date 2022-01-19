@@ -47,6 +47,7 @@ export class DoublyLinkedList<T> {
       p = this.firstNode;
       while (p.next != null) p = p.next;
       p.next = node;
+      node.prev = p;
     }
     this.lastNode = node;
     this.size++;
@@ -175,6 +176,24 @@ export class DoublyLinkedList<T> {
     }
     this.lastNode = node;
     this.size++;
+  }
+
+  removeBefore(node: DoublyLinkedNode<T>) {
+    let prevNode = node.prev;
+    if (prevNode) {
+      node.prev = prevNode.prev;
+      if (prevNode.prev) prevNode.prev.next = node;
+    }
+    this.size--;
+  }
+
+  removeAfter(node: DoublyLinkedNode<T>) {
+    let nextNode = node.next;
+    if (nextNode) {
+      node.next = nextNode.next;
+      if (nextNode.next) nextNode.next.prev = node;
+    }
+    this.size--;
   }
 
   removeBeginning(): void {

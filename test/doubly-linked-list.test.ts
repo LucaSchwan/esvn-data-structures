@@ -48,6 +48,7 @@ describe('DoublyLinkedList', () => {
       expect(head).to.not.equal(null);
       if (head.next) expect(head.next.element).to.equal('new');
     }
+    if (node.prev) expect(node.prev.element).to.equal('test');
   });
 
   it('should create a new Node and add it to the head or next of the last Node if passed a parameter that is the type of the LinkedList.', () => {
@@ -184,5 +185,38 @@ describe('DoublyLinkedList', () => {
     list.insert('new', 1);
 
     expect(list.atIndex(1)).to.equal('new');
+  });
+
+  it('should remove the Node after the given one.', () => {
+    let node: DoublyLinkedNode<string> = {
+      element: 'test',
+      next: null,
+      prev: null,
+    };
+    let list = new DoublyLinkedList();
+    list.addNode(node);
+
+    list.add('test');
+    expect(node.next).to.not.equal(null);
+
+    list.removeAfter(node);
+    expect(node.next).to.equal(null);
+  });
+
+  it('should remove the Node before the given one.', () => {
+    let list = new DoublyLinkedList();
+    list.add('test');
+
+    let node: DoublyLinkedNode<string> = {
+      element: 'test',
+      next: null,
+      prev: null,
+    };
+    list.addNode(node);
+
+    expect(node.prev).to.not.equal(null);
+
+    list.removeBefore(node);
+    expect(node.prev).to.equal(null);
   });
 });
