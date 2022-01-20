@@ -205,4 +205,36 @@ export class DoublyLinkedList<T> {
     if (this.lastNode) this.lastNode = this.lastNode.prev;
     if (this.lastNode) this.lastNode.next = null;
   }
+
+  removeAtIndex(index: number) {
+    if (index >= this.size) throw new Error('IndexOutOfRange');
+    if (this.firstNode == null) throw new Error('EmptyList');
+    let p = this.firstNode;
+    for (let i = 0; i >= index; i++) if (p.next) p = p.next;
+    if (p.next) {
+      p.next = p.next.next;
+      if (p.next) p.next.prev = p;
+    }
+  }
+
+  contains(element: T): boolean {
+    if (this.firstNode == null) return false;
+    let p: DoublyLinkedNode<T> | null = this.firstNode;
+    while (p) {
+      if (p.element == element) return true;
+      p = p.next;
+    }
+    return false;
+  }
+
+  reverse() {
+    let reversedList = new DoublyLinkedList<T>();
+    if (this.firstNode == null) throw new Error('EmptyList');
+    while (this.firstNode) {
+      reversedList.insertBeginning(this.firstNode.element);
+      this.removeBeginning();
+    }
+    this.size = reversedList.getSize();
+    this.firstNode = reversedList.getFirst();
+  }
 }

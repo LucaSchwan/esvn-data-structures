@@ -219,4 +219,32 @@ describe('DoublyLinkedList', () => {
     list.removeBefore(node);
     expect(node.prev).to.equal(null);
   });
+
+  it('should remove a Node at a given index.', () => {
+    let list = new DoublyLinkedList('test');
+    list.add('remove');
+    list.add('new');
+    expect(list.atIndex(1)).to.equal('remove');
+
+    list.removeAtIndex(1);
+
+    expect(list.atIndex(1)).to.equal('new');
+  });
+
+  it('should return true if an element is in the list and false if not.', () => {
+    let list = new DoublyLinkedList('test');
+
+    expect(list.contains('test')).to.equal(true);
+    expect(list.contains('other')).to.equal(false);
+  });
+
+  it('should reverse the list.', () => {
+    let list = new DoublyLinkedList('start');
+    list.add('end');
+
+    list.reverse();
+
+    expect(list.atIndex(0)).to.equal('end');
+    expect(list.atIndex(1)).to.equal('start');
+  });
 });
