@@ -296,4 +296,14 @@ describe('DoublyLinkedList', () => {
 
     expect(arrayEquals(array, compArray)).to.equal(true);
   });
+
+  it('should return if the list is empty or not.', () => {
+    let list = new DoublyLinkedList();
+
+    expect(list.isEmpty()).to.equal(true);
+
+    list.add('test');
+
+    expect(list.isEmpty()).to.equal(false);
+  });
 });

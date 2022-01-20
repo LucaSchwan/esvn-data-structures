@@ -272,4 +272,8 @@ export class DoublyLinkedList<T> {
     }
     return array;
   }
+
+  isEmpty(): boolean {
+    return this.firstNode ? false : true;
+  }
 }
