@@ -247,4 +247,31 @@ describe('DoublyLinkedList', () => {
     expect(list.atIndex(0)).to.equal('end');
     expect(list.atIndex(1)).to.equal('start');
   });
+
+  it('should apply a callback function for each element.', () => {
+    let list = new DoublyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+
+    let sum = 0;
+
+    list.forEach((element: number) => {
+      sum += element;
+    });
+
+    expect(sum).to.equal(10);
+  });
+
+  it('should return a stringified version of the list.', () => {
+    let list = new DoublyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let stringified = list.toString();
+
+    expect(stringified).to.equal('1, 2, 3, 4, 5');
+  });
 });

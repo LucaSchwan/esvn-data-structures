@@ -237,4 +237,29 @@ export class DoublyLinkedList<T> {
     this.size = reversedList.getSize();
     this.firstNode = reversedList.getFirst();
   }
+
+  forEach(callback: (element: T) => any): void {
+    if (this.firstNode == null) throw new Error('EmptyList');
+    let p: DoublyLinkedNode<T> | null = this.firstNode;
+    while (p) {
+      callback(p.element);
+      p = p.next;
+    }
+  }
+
+  toString(): string {
+    let p: DoublyLinkedNode<T> | null = this.firstNode;
+    let str = '';
+    if (p) {
+      str += `${p.element as unknown as string}`;
+      p = p.next;
+    } else {
+      throw new Error('EmptyList');
+    }
+    while (p) {
+      str += `, ${p.element as unknown as string}`;
+      p = p.next;
+    }
+    return str;
+  }
 }
