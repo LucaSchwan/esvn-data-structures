@@ -236,7 +236,7 @@ list.prettyPrint(); // returns a string in the form of 'element -> element -> el
 
 #+end_src
 
-** [24/25] Doubly Linked List
+** [25/25] Doubly Linked List
 + [X] getFirst
 + [X] getLast
 + [X] getSize
@@ -261,7 +261,8 @@ list.prettyPrint(); // returns a string in the form of 'element -> element -> el
 + [X] toString
 + [X] toArray1
 + [X] isEmpty
-+ [ ] prettyPrint
++ [X] prettyPrint
+* TODO write documentation for DoublyLinkedList
 ** [5/9] Stack
 + [X] getHead
 + [X] getSize

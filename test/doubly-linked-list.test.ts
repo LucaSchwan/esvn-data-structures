@@ -306,4 +306,16 @@ describe('DoublyLinkedList', () => {
 
     expect(list.isEmpty()).to.equal(false);
   });
+
+  it('should pretty print the list.', () => {
+    let list = new DoublyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let prettyPrinted = list.prettyPrint();
+
+    expect(prettyPrinted).to.equal('1 <-> 2 <-> 3 <-> 4 <-> 5');
+  });
 });

@@ -276,4 +276,20 @@ export class DoublyLinkedList<T> {
   isEmpty(): boolean {
     return this.firstNode ? false : true;
   }
+
+  prettyPrint(): string {
+    let p: DoublyLinkedNode<T> | null = this.firstNode;
+    let str = '';
+    if (p) {
+      str += `${p.element as unknown as string}`;
+      p = p.next;
+    } else {
+      throw new Error('EmptyList');
+    }
+    while (p) {
+      str += ` <-> ${p.element as unknown as string}`;
+      p = p.next;
+    }
+    return str;
+  }
 }
