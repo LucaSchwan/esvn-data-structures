@@ -236,7 +236,7 @@ list.prettyPrint(); // returns a string in the form of 'element -> element -> el
 
 #+end_src
 
-** [22/26] Doubly Linked List
+** [23/26] Doubly Linked List
 + [X] getFirst
 + [X] getLast
 + [X] getSize
@@ -259,7 +259,7 @@ list.prettyPrint(); // returns a string in the form of 'element -> element -> el
 + [X] reverse
 + [X] forEach
 + [X] toString
-+ [ ] toArray
++ [X] toArray
 + [ ] size
 + [ ] isEmpty
 + [ ] prettyPrint

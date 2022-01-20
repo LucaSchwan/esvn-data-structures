@@ -262,4 +262,14 @@ export class DoublyLinkedList<T> {
     }
     return str;
   }
+
+  toArray(): Array<T> {
+    let array: Array<T> = [];
+    let p: DoublyLinkedNode<T> | null = this.firstNode;
+    while (p) {
+      array.push(p.element);
+      p = p.next;
+    }
+    return array;
+  }
 }

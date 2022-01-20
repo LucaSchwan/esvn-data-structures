@@ -274,4 +274,26 @@ describe('DoublyLinkedList', () => {
 
     expect(stringified).to.equal('1, 2, 3, 4, 5');
   });
+
+  it('should return an array with the elements.', () => {
+    let list = new DoublyLinkedList(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    let array = list.toArray();
+    let compArray = [1, 2, 3, 4, 5];
+
+    let arrayEquals = (a: number[], b: number[]) => {
+      return (
+        Array.isArray(a) &&
+        Array.isArray(b) &&
+        a.length === b.length &&
+        a.every((val, index) => val === b[index])
+      );
+    };
+
+    expect(arrayEquals(array, compArray)).to.equal(true);
+  });
 });
