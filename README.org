@@ -7,26 +7,8 @@ This an implementation of standard data structures in Typescript for educational
 
 ** SinglyLinkedList
 ** Doubly Linked List                                                 :done:
-** [5/9] Stack
-+ [X] getHead
-+ [X] getSize
-+ [X] push
-+ [X] pop
-+ [X] peak
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [5/9] Queue
-+ [X] getFirst
-+ [X] getLast
-+ [X] getSize
-+ [X] enqueue
-+ [X] dequeue
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
+** Stack
+** Queue
 ** [0/4] Binary Tree
 + [ ] toString
 + [ ] toArray
