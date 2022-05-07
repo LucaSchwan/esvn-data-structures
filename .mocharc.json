@@ -1,7 +1,7 @@
 {
   "color": false,
   "require": "ts-node/register",
-  "spec": "test/**/*.test.ts",
+  "spec": "test/**/*.spec.ts",
   "package": "./package.json",
   "ui": "bdd"
 }
