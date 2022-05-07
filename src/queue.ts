@@ -1,7 +1,7 @@
 import { DoublyLinkedList, DoublyLinkedNode } from './doubly-linked-list';
 
 export class Queue<T> {
-  list = new DoublyLinkedList<T>();
+  protected list = new DoublyLinkedList<T>();
 
   constructor(element?: T) {
     element ? this.list.insertBeginning(element) : null;
@@ -30,5 +30,21 @@ export class Queue<T> {
     }
     this.list.removeEnd();
     return node ? node.element : null;
+  }
+
+  toString(): string {
+    return this.list.toString();
+  }
+
+  toArray(): Array<T> {
+    return this.list.toArray();
+  }
+
+  isEmpty(): boolean {
+    return this.list.isEmpty();
+  }
+
+  prettyPrint(): string {
+    return this.list.prettyPrint();
   }
 }

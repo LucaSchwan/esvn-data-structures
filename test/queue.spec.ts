@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { DoublyLinkedNode } from '../src/doubly-linked-list';
 import { Queue } from '../src/queue';
 
 describe('Queue', () => {
@@ -50,5 +49,61 @@ describe('Queue', () => {
     let newSize = queue.getSize();
 
     expect(newSize - size).to.equal(1);
+  });
+
+  it('should return a stringified version of the list.', () => {
+    let queue = new Queue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    let stringified = queue.toString();
+
+    expect(stringified).to.equal('5, 4, 3, 2, 1');
+  });
+
+  it('should return an array with the elements.', () => {
+    let queue = new Queue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    let array = queue.toArray();
+    let compArray = [5, 4, 3, 2, 1];
+
+    let arrayEquals = (a: number[], b: number[]) => {
+      return (
+        Array.isArray(a) &&
+        Array.isArray(b) &&
+        a.length === b.length &&
+        a.every((val, index) => val === b[index])
+      );
+    };
+
+    expect(arrayEquals(array, compArray)).to.equal(true);
+  });
+
+  it('should return if the list is empty or not.', () => {
+    let queue = new Queue();
+
+    expect(queue.isEmpty()).to.equal(true);
+
+    queue.enqueue('test');
+
+    expect(queue.isEmpty()).to.equal(false);
+  });
+
+  it('should pretty print the list.', () => {
+    let queue = new Queue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    let prettyPrinted = queue.prettyPrint();
+
+    expect(prettyPrinted).to.equal('5 <-> 4 <-> 3 <-> 2 <-> 1');
   });
 });
