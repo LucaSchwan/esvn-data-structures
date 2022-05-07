@@ -32,4 +32,20 @@ export class Stack<T> {
     let head = this.getHead();
     return head ? head.element : null;
   }
+
+  toString(): string {
+    return this.frames.toString();
+  }
+
+  toArray(): Array<T> {
+    return this.frames.toArray();
+  }
+
+  isEmpty(): boolean {
+    return this.frames.isEmpty();
+  }
+
+  prettyPrint(): string {
+    return this.frames.prettyPrint();
+  }
 }
