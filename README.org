@@ -9,33 +9,3 @@ This an implementation of standard data structures in Typescript for educational
 ** Doubly Linked List                                                 :done:
 ** Stack
 ** Queue
-** [0/4] Binary Tree
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [0/4] Binary Search Tree
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [0/4] Heap
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [0/4] Hashing
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [0/4] Graph
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
-** [0/4] Matrix
-+ [ ] toString
-+ [ ] toArray
-+ [ ] isEmpty
-+ [ ] prettyPrint
