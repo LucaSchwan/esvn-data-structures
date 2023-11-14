@@ -1,11 +1,11 @@
 #+TITLE: ehrenschwan data structures
 #+AUTHOR: ehrenschwan
 
-This an implementation of standard data structures in Typescript for educational purposes.
+This an implementation of standard list data structures in Typescript for educational purposes.
 
 * Data Structures
 
 ** SinglyLinkedList
-** Doubly Linked List                                                 :done:
+** Doubly Linked List
 ** Stack
 ** Queue
