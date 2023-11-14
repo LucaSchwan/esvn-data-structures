@@ -6,6 +6,9 @@ This an implementation of standard list data structures in Typescript for educat
 * Data Structures
 
 ** SinglyLinkedList
+
+[Documentation](./documentation/SinglyLinkedList.md)
+
 ** Doubly Linked List
 ** Stack
 ** Queue
