@@ -7,7 +7,7 @@ This an implementation of standard list data structures in Typescript for educat
 
 ** SinglyLinkedList
 
-[Documentation](./documentation/SinglyLinkedList.md)
+[[./documentation/SinglyLinkedList.org][Documentation]]
 
 ** Doubly Linked List
 ** Stack
